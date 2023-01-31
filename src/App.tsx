@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Button from "./components/Button"
+import ProgressBar from "./components/ProgressBar"
+import useRecommendedMovie from "./hooks/useRecommendedMovie"
+import RecommendationForm from "./compositions/RecommendationForm"
+import { progressBarStepsDetails, stepsDetails } from "./compositions/RecommendationForm/stepsDetails"
+import { RecommendedMovieContextProvider } from "./contexts/RecommendedMovieContext"
+
+const App = () => {
+	const recommendedMovieHookData = useRecommendedMovie()
+	const { selectedStep, handleGoBack, progressBarStep } = recommendedMovieHookData
+
+	const namesOfStep = progressBarStepsDetails.map(({ stepName }) => stepName)
+
+	return (
+		<div className="text-center">
+			<RecommendedMovieContextProvider data={recommendedMovieHookData}>
+				<div className={`relative pt-12`}>
+					{selectedStep !== 0 ? (
+						<div className="absolute ml-12">
+							<Button onClick={() => handleGoBack(stepsDetails)}>
+								<div className="text-xl font-bold">Go back</div>
+							</Button>
+						</div>
+					) : null}
+					<div className="w-full">
+						<ProgressBar selectedStep={progressBarStep} namesOfStep={namesOfStep} />
+					</div>
+				</div>
+
+				<RecommendationForm />
+			</RecommendedMovieContextProvider>
+		</div>
+	)
 }
 
-export default App;
+export default App

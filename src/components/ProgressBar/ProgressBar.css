@@ -1,0 +1,20 @@
+.indexedStep {
+  @apply h-10 w-10 text-zinc-600 text-xl bg-red-300 rounded-full border-2 border-gray-300 flex justify-center items-center;
+}
+
+.indexedStep.accomplished {
+  @apply bg-red-500 text-white border-none;
+}
+
+.RSPBprogressBar {
+  @apply h-1.5 w-4/12 bg-gray-300 relative flex justify-between items-center z-0 my-4 mx-auto;
+}
+
+.RSPBprogressBar .RSPBstep {
+  @apply inline-flex justify-between items-center z-0 absolute transition-all ease-in -top-4;
+}
+
+.RSPBprogressBar .RSPBprogression {
+  @apply bg-red-500 absolute -z-10;
+  transition: width 0.3s ease;
+}
