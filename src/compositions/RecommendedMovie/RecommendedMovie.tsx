@@ -31,7 +31,7 @@ const RecommendedMovie = () => {
 							alt="movie_poster"
 							src={`https://image.tmdb.org/t/p/w500${recommendedMovies[movieIndex].poster_path}`}
 						/>
-						<Button onClick={handleNextMovie}>Next Movie</Button>
+						<Button onClick={handleNextMovie}>I don&apos;t like it, show other movie!</Button>
 					</div>
 				)
 			) : (
