@@ -61,13 +61,13 @@ export const stepsDetails: IStepsDetails[] = [
 		name: "releaseYear",
 		component: ReleaseYear,
 		progressBarStep: progressBarStepsDetails[1],
-		initialValue: [],
+		initialValue: {},
 	},
 	{
 		name: "languages",
 		component: Language,
 		progressBarStep: progressBarStepsDetails[2],
-		initialValue: [],
+		initialValue: {},
 	},
 	{
 		name: "popularity",

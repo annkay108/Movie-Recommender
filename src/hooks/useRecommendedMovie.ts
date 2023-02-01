@@ -32,10 +32,11 @@ const useRecommendedMovie = (): IReturnType => {
 	const [isLoading, setIsLoading] = useState<boolean>(false)
 
 	const handleSubmit = async (values: FormikValues): Promise<void> => {
+		console.log('runnnnnnnnnnnnnnnnnnnnnnnnnnnn')
 		const { genres, releaseYear, languages, popularity } = values
-		const formattedReleaseYear = releaseYear.map(({ value }) => value).join(",")
+		const formattedReleaseYear = releaseYear.value
 		const formattedGenres = genres.map(({ value }) => value).join(",")
-		const formattedLanguages = languages.map(({ value }) => value).join(",")
+		const formattedLanguages = languages.value
 		const isPopular = popularity.value === 1
 		try {
 			setIsLoading(true)
