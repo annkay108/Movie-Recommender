@@ -1,6 +1,7 @@
 import React, { FC } from "react"
-import PageAnimation from "../../../../components/PageAnimation"
+
 import Select from "../../../../components/Select"
+import PageAnimation from "../../../../components/PageAnimation"
 import { IRecommendationElementProps } from "../../stepsDetails"
 
 const options = [

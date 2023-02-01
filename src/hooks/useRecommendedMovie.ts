@@ -26,18 +26,18 @@ interface IRecommendedMovies {
 	vote_average: number
 }
 const useRecommendedMovie = (): IReturnType => {
+	const [isLoading, setIsLoading] = useState<boolean>(false)
 	const [selectedStep, setSelectedStep] = useState<number>(0)
 	const [progressBarStep, setProgressBarStep] = useState<number>(0)
 	const [recommendedMovies, setRecommendedMovies] = useState<IRecommendedMovies[]>([])
-	const [isLoading, setIsLoading] = useState<boolean>(false)
 
 	const handleSubmit = async (values: FormikValues): Promise<void> => {
-		console.log('runnnnnnnnnnnnnnnnnnnnnnnnnnnn')
 		const { genres, releaseYear, languages, popularity } = values
 		const formattedReleaseYear = releaseYear.value
 		const formattedGenres = genres.map(({ value }) => value).join(",")
 		const formattedLanguages = languages.value
 		const isPopular = popularity.value === 1
+
 		try {
 			setIsLoading(true)
 			const response = await getMovies(formattedReleaseYear, formattedGenres, formattedLanguages, isPopular)

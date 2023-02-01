@@ -1,5 +1,5 @@
-import React, { PropsWithChildren, FC, Fragment } from "react"
 import { Transition } from "@headlessui/react"
+import React, { PropsWithChildren, FC, Fragment } from "react"
 
 const PageAnimation: FC<PropsWithChildren> = ({ children }) => {
 	return (

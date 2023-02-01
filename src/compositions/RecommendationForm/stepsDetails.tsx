@@ -1,5 +1,6 @@
-import { FormikErrors } from "formik"
 import React from "react"
+import { FormikErrors } from "formik"
+
 import RecommendedMovie from "../RecommendedMovie"
 import Genre from "./RecommendationFormElement/Genre"
 import Language from "./RecommendationFormElement/Language"

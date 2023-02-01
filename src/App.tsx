@@ -4,8 +4,8 @@ import Button from "./components/Button"
 import ProgressBar from "./components/ProgressBar"
 import useRecommendedMovie from "./hooks/useRecommendedMovie"
 import RecommendationForm from "./compositions/RecommendationForm"
-import { progressBarStepsDetails, stepsDetails } from "./compositions/RecommendationForm/stepsDetails"
 import { RecommendedMovieContextProvider } from "./contexts/RecommendedMovieContext"
+import { progressBarStepsDetails, stepsDetails } from "./compositions/RecommendationForm/stepsDetails"
 
 const App = () => {
 	const recommendedMovieHookData = useRecommendedMovie()

@@ -1,8 +1,9 @@
-import { Formik } from "formik"
 import React from "react"
-import { useRecommendedMovieContext } from "../../contexts/RecommendedMovieContext"
+import { Formik } from "formik"
+
 import { stepsDetails } from "./stepsDetails"
 import { validationSchema } from "./validation"
+import { useRecommendedMovieContext } from "../../contexts/RecommendedMovieContext"
 
 const RecommendationForm = () => {
 	const { selectedStep, handleNextStep, handleSubmit } = useRecommendedMovieContext()

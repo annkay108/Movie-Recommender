@@ -2,8 +2,8 @@ import React, { FC } from "react"
 
 import Button from "../../../../components/Button"
 import Select from "../../../../components/Select"
-import { IRecommendationElementProps } from "../../stepsDetails"
 import PageAnimation from "../../../../components/PageAnimation"
+import { IRecommendationElementProps } from "../../stepsDetails"
 
 const options = [
 	{ value: 28, label: "Action" },
